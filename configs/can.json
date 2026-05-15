@@ -1,0 +1,33 @@
+{
+  "feature_weights": {
+    "relative_pos": 1.0,
+    "relative_quat": 0.0,
+    "robot0_gripper_qpos": 1.0,
+    "object_frame_relative_pos": 1.0,
+    "object_z": 1.0,
+    "object_pos": 1.0,
+    "robot0_eef_pos": 1.0,
+    "robot0_eef_quat": 0.0,
+    "object_to_target_pos": 1.0,
+    "object_quat": 0.0
+  },
+  "can_phase_gate_metric": true,
+  "can_phase_gate_min_phase": "lift",
+  "can_phase_gate_next_window": 24,
+  "can_phase_gate_pick_lift_delta": 0.02803714813076741,
+  "can_phase_gate_lift_start_contact_eef_object_max": 0.053386730333262966,
+  "can_phase_gate_lift_start_gripper_close_threshold": 0.03585846566033432,
+  "future_progress_phase_overrides": {
+    "transport": {
+      "distance_margin": 0.04,
+      "distance_ratio": 1.6,
+      "ori_weight": 0.0,
+      "terminal_eef_scale": 0.05,
+      "terminal_eef_target": 0.07,
+      "terminal_eef_weight": 0.8,
+      "terminal_z_scale": 0.05,
+      "terminal_z_target": 0.9,
+      "terminal_z_weight": 0.35
+    }
+  }
+}

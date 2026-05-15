@@ -1,0 +1,14 @@
+{
+  "feature_weights": {
+    "relative_pos": 1.0,
+    "relative_quat": 0.0,
+    "robot0_gripper_qpos": 1.0,
+    "object_frame_relative_pos": 0.0,
+    "object_z": 0.0,
+    "object_pos": 0.0,
+    "robot0_eef_pos": 0.0,
+    "robot0_eef_quat": 0.0,
+    "object_to_target_pos": 0.0,
+    "object_quat": 0.0
+  }
+}

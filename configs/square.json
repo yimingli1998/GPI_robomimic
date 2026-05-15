@@ -1,0 +1,16 @@
+{
+  "square_lift_start_preference": true,
+  "square_object_abs_orientation_insert_blend": 0.9640274245322799,
+  "square_object_abs_orientation_pre_insert_blend": 0.9243284297336744,
+  "square_object_abs_orientation_transport_blend": 0.8358396913847608,
+  "square_object_abs_retarget_blend": 0.626825405968061,
+  "square_phase_gate_metric": true,
+  "square_phase_gate_mode": "soft",
+  "square_phase_gate_soft_hard_boundary": true,
+  "square_phase_gate_soft_max_phase": "pre_insert",
+  "square_phase_gate_soft_min_penalty": 0.004062161651567865,
+  "square_phase_gate_soft_min_phase": "pre_insert",
+  "square_phase_gate_soft_next_max_progress": 2.0,
+  "square_phase_gate_soft_next_step_penalty": 0.24257471274599196,
+  "square_phase_gate_soft_next_window": 36
+}

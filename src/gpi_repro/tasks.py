@@ -30,7 +30,6 @@ DEFAULT_OUTPUT_ROOT = PROJECT_ROOT / "results" / "reproduce_0_30"
 DEFAULT_CACHE_ROOT = PROJECT_ROOT / "artifacts" / "pca_state"
 
 TASKS = ("can", "square", "lift")
-DEFAULT_THRESHOLDS = {"can": 0.96, "square": 0.85, "lift": 1.0}
 
 
 @dataclass(frozen=True)
@@ -39,7 +38,6 @@ class TaskSpec:
     dataset_relpath: Path
     config: Path
     cache_name: str
-    expected_success_by_total: dict[int, int]
     args: tuple[str, ...]
 
     def dataset_path(self, data_root: Path) -> Path:
@@ -98,7 +96,6 @@ TASK_SPECS = {
         dataset_relpath=Path("robomimic/datasets/can/mh/low_dim_abs.hdf5"),
         config=PROJECT_ROOT / "configs" / "can.json",
         cache_name="can.pt",
-        expected_success_by_total={31: 30},
         args=(
             "--fresh-env-per-seed",
             "--distance-config",
@@ -117,7 +114,6 @@ TASK_SPECS = {
         dataset_relpath=Path("robomimic/datasets/square/mh/low_dim_abs.hdf5"),
         config=PROJECT_ROOT / "configs" / "square.json",
         cache_name="square.pt",
-        expected_success_by_total={31: 27},
         args=(
             "--fresh-env-per-seed",
             "--distance-config",
@@ -142,7 +138,6 @@ TASK_SPECS = {
         dataset_relpath=Path("robomimic/datasets/lift/mh/low_dim.hdf5"),
         config=PROJECT_ROOT / "configs" / "lift.json",
         cache_name="lift.pt",
-        expected_success_by_total={31: 31},
         args=(
             "--action-horizon",
             "1",

@@ -99,7 +99,7 @@ Useful runtime flags:
 - `--rebuild-cache`: force PCA cache regeneration from datasets.
 - `--extra-policy-args --horizon 500`: append arguments directly to the policy.
 
-## Reference Results
+## Reproduced Results
 
 The `results/` directory is ignored by git and is not needed for reproduction.
 The runner writes fresh `summary.json`, `checkpoints_every_10.csv`,

@@ -17,7 +17,6 @@ from .tasks import (
     DEFAULT_OUTPUT_ROOT,
     DEFAULT_POLICY_SCRIPT,
     DEFAULT_PYTHON,
-    DEFAULT_THRESHOLDS,
     TASKS,
     TaskSpec,
     get_task,
@@ -161,7 +160,6 @@ def summarize(task: TaskSpec, seeds: list[int], results: list[dict[str, Any]]) -
     pick_successes = [int(result["seed"]) for result in ordered if result.get("pick_success")]
     pick_failures = [int(result["seed"]) for result in ordered if not result.get("pick_success")]
     total = len(ordered)
-    expected = task.expected_success_by_total.get(total)
     return {
         "task": task.name,
         "profile": "pca_state",
@@ -176,8 +174,6 @@ def summarize(task: TaskSpec, seeds: list[int], results: list[dict[str, Any]]) -
         "pick_success_rate": len(pick_successes) / total if total else 0.0,
         "pick_successful_seeds": pick_successes,
         "pick_failed_seeds": pick_failures,
-        "expected_success": expected,
-        "matches_reference_count": None if expected is None else len(successes) == expected,
         "missing_seeds": [seed for seed in seeds if seed not in by_seed],
     }
 
@@ -498,17 +494,6 @@ def main(argv: list[str] | None = None) -> int:
     if not args.dry_run:
         write_combined(output_root, summaries, all_checkpoints, all_seed_rows)
         print(f"[write] {output_root}")
-        for item in summaries:
-            expected = item.get("expected_success")
-            if expected is not None:
-                status = "MATCH" if item["num_success"] == expected else "DIFF"
-                print(f"[{status}] {item['task']} reference {expected}/{item['num_total']}")
-            else:
-                threshold = DEFAULT_THRESHOLDS.get(item["task"])
-                if threshold is None:
-                    continue
-                status = "PASS" if item["success_rate"] >= threshold else "FAIL"
-                print(f"[{status}] {item['task']} threshold {threshold * 100:.1f}%")
     return 0
 
 

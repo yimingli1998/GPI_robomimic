@@ -25,11 +25,12 @@ pip install -e ".[rollout]"
 ```
 
 The `rollout` extra installs RoboMimic from the official `v0.5.0` GitHub tag,
-since that version is not published on PyPI.
+since that version is not published on PyPI. The package versions used for
+reproduction are pinned in `pyproject.toml`.
 
-The reference runs below were checked with robosuite `1.5.1`. Can seed-level
-results are sensitive to the low-dimensional object observation layout, so use a
-consistent robosuite / RoboMimic environment when comparing exact seed lists.
+Can seed-level results are sensitive to the low-dimensional object observation
+layout, so use a consistent robosuite / RoboMimic / MuJoCo environment when
+comparing exact seed lists.
 
 You need the low-dimensional RoboMimic datasets. The runner can download the
 exact files used here from the Diffusion Policy training-data archive:
@@ -106,6 +107,23 @@ The runner writes fresh `summary.json`, `checkpoints_every_10.csv`,
 files under the selected `--output-root`.
 
 The reported reproduction numbers use seeds `0..30`:
+
+These counts were reproduced with the default dependency pins in
+`pyproject.toml` on:
+
+```text
+Python 3.11.15
+torch 2.11.0+cu128
+torchvision 0.26.0+cu128
+robomimic 0.5.0
+robosuite 1.5.1
+mujoco 3.3.5
+numpy 1.26.4
+h5py 3.16.0
+imageio 2.33.1
+opencv-python 4.11.0.86
+mink 0.0.13
+```
 
 | Task | Success |
 | --- | ---: |

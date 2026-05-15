@@ -2,18 +2,24 @@
 name = "gpi-robomimic"
 version = "0.1.0"
 description = "Minimal reproducibility harness for GPI-style RoboMimic Can, Square, and Lift evaluations."
-requires-python = ">=3.10,<3.12"
+requires-python = ">=3.11,<3.12"
 dependencies = [
-    "numpy",
+    "numpy==1.26.4",
 ]
 
 [project.optional-dependencies]
 rollout = [
-    "h5py",
-    "imageio",
-    "numpy",
-    "scipy",
-    "torch",
+    "h5py==3.16.0",
+    "imageio==2.33.1",
+    "imageio-ffmpeg==0.4.9",
+    "mink==0.0.13",
+    "mujoco==3.3.5",
+    "numba==0.65.1",
+    "numpy==1.26.4",
+    "opencv-python==4.11.0.86",
+    "scipy==1.17.1",
+    "torch==2.11.0",
+    "torchvision==0.26.0",
     "robomimic @ git+https://github.com/ARISE-Initiative/robomimic.git@v0.5.0",
     "robosuite==1.5.1",
 ]

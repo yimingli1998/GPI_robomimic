@@ -119,11 +119,6 @@ Useful runtime flags:
 
 ## Reference Results
 
-The `results/` directory is ignored by git and is not needed for reproduction.
-The runner writes fresh `summary.json`, `checkpoints_every_10.csv`,
-`per_seed_results.csv`, `final_summary.csv`, and combined checkpoint / per-seed
-files under the selected `--output-root`.
-
 The reported reproduction numbers use seeds `0..30`:
 
 | Task | Success |
